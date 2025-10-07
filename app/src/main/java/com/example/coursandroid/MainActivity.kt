@@ -1,47 +1,35 @@
 package com.example.coursandroid
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.coursandroid.ui.theme.CoursandroidTheme
+import android.R
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            CoursandroidTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
+open class voiture(var mar: String, var mat: String, var num:Int){
+
+     fun afficher(){
+        println("c est une $mar");
+    }
+
+    fun getNum(): Int {
+        return num*2
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+class camion( mar: String,  mat: String,  num:Int, var poids : Float) : voiture(mar,mat,num) {
+
+
 }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CoursandroidTheme {
-        Greeting("Android")
-    }
+fun main(){
+    var v = voiture("ford","Z344",12)
+    var c = camion("totyota","Z344",12,123f)
+
+    v.afficher()
+    var numr =  v.getNum()
+
+
+
+
+
+
+
+
 }
