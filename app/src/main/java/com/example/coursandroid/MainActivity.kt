@@ -34,6 +34,9 @@ fun main(){
 
     var point = Point(2f,3f)
     var cir = circle(point,5f)
+    var cir1 = circle(point,3f)
+
+
 
     v.afficher()
     var numr =  v.getNumber()
