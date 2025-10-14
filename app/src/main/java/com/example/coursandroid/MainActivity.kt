@@ -93,13 +93,5 @@ fun main(){
     var obj = Adam()
     obj.nom= "adam"
     obj.age = 23
-
-
-
-
-
-
-
-
-
+    obj.nom = "amine"
 }
