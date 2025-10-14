@@ -2,11 +2,15 @@ package com.example.coursandroid
 
 interface Tva {
 
+    val propiete : Int
     fun getTva()
     fun reduireTva()
 }
 
 class Tvav1(val montant: Float) : Tva{
+    override val propiete: Int
+        get() = 23
+
     override fun getTva() {
         val m : Double = montant - montant*0.2
         println("le montant de apres reduction de tva est 20% est : $m")
@@ -18,6 +22,8 @@ class Tvav1(val montant: Float) : Tva{
 }
 
 class Tvav2(val montant: Float) : Tva {
+    override val propiete: Int
+        get() = 23
     override fun getTva() {
         val m : Double = montant - montant*0.15
         println("le montant de apres reduction de tva est 15% est : $m")
