@@ -38,34 +38,61 @@ open class Voiture(var mar: String, var mat: String, var num:Int){
     }
 }
 
-class Camion( mar: String,  mat: String,  num:Int, var poids : Float) : Voiture(mar,mat,num) {
-
-
-
+class Camion1( mar: String,  mat: String,  num:Int, var poids : Float) : Voiture(mar,mat,num) {
 }
 
+interface Vehicule{
+
+    fun demarrer()
+    fun freiner()
+}
+
+class Car(val m:String,val model:String) : Vehicule {
+    override fun demarrer() {
+        println("la $model est demarer")
+    }
+
+    override fun freiner() {
+        println("la voiture à freiner")
+    }
+}
+
+class Camion : Vehicule{
+
+    override fun demarrer() {
+        println("le camion a demarer")
+    }
+    override fun freiner() {
+        println("le camion à freiner")
+    }
+}
+
+class Adam {
+    var age : Int = 0
+    var nom : String = ""
+    fun getNom() :String {
+        return nom
+    }
+    fun getAge() : Int{
+        return age
+    }
+}
 fun main(){
 
-    val pn : Point = Point(2f,3f,)
-    var c3 = Circle(pn,2.3f)
+    var a = Car("AUDI","A8");
+    //a.demarrer()
+    //a.freiner()
 
-    val surf = c3.getSurface()
-    println(surf)
-    var v = Voiture("ford","Z344",12)
-    var c = Camion("totyota","Z344",12,123f)
+    var c = Camion()
+    //c.demarrer()
+    //c.freiner()
+    var name1 : String? = null
+    var name2 : String = name1 ?: "amine"
+    println(name2)
 
-    var point = Point(2f,3f)
-    var cir = Circle(point,5f)
-
-    var z1 = Complexe(2f,4f)
-    var z2 = Complexe(3f,3f)
-    fun produitcomplex( z : Complexe, z2 : Complexe) : Complexe{
-
-        val z3 = Complexe(z.re*z2.re - z.im*z2.im,z.re*z2.im+z2.im +z2.im*z.re )
-        return z3
-    }
-    print(z1)
-    println("z1 = ${z2.re} + ${z2.im} i")
+    var obj = Adam()
+    obj.nom= "adam"
+    obj.age = 23
 
 
 
