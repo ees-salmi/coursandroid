@@ -34,12 +34,27 @@ class Tvav2(val montant: Float) : Tva {
     }
 }
 
-fun main(){
+sealed class Personne{
+    data class stagiaire(val cne : Double,val groupe : Int) : Personne()
+    data class Formateur(val cin : Double, val filiere :  String) : Personne()
+    data class administrateur(val cin : Double) : Personne()
+}
 
+fun definirFonction(aamri : Personne){
+    when(aamri){
+        is Personne.stagiaire -> println("je suis stagiaire")
+        is Personne.Formateur -> println("je uis formateur")
+        is Personne.administrateur -> println("je suis admin")
+    }
+}
+
+fun main(){
+    var p = Personne.stagiaire(222.2,202)
+    var ad = Personne.administrateur(222.2)
+    definirFonction(p)
     var a = Tvav1(5000f)
     var b = Tvav2(5000f)
 
-    a.getTva()
-    b.getTva()
+
 
 }

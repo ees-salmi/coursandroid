@@ -70,12 +70,6 @@ class Camion : Vehicule{
 class Adam {
     var age : Int = 0
     var nom : String = ""
-    fun getNom() :String {
-        return nom
-    }
-    fun getAge() : Int{
-        return age
-    }
 }
 fun main(){
 
