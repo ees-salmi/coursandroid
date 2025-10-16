@@ -7,7 +7,7 @@ interface Tva {
     fun reduireTva()
 }
 
-class Tvav1(val montant: Float) : Tva{
+open class Tvav1(val montant: Float) : Tva{
     override val propiete: Int
         get() = 23
 
@@ -45,15 +45,21 @@ fun definirFonction(aamri : Personne){
         is Personne.stagiaire -> println("je suis stagiaire")
         is Personne.Formateur -> println("je uis formateur")
         is Personne.administrateur -> println("je suis admin")
+        else -> 0
+    }
+}
+
+class Calculer(val a:Int,val b :Int){
+    fun va(a:Int) : Double{
+        return a*a as Double
+    }
+    override fun  toString():String{
+        return "a = $a and b $ = $b"
     }
 }
 
 fun main(){
-    var p = Personne.stagiaire(222.2,202)
-    var ad = Personne.administrateur(222.2)
-    definirFonction(p)
-    var a = Tvav1(5000f)
-    var b = Tvav2(5000f)
+
 
 
 
