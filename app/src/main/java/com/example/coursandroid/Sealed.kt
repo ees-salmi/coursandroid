@@ -34,11 +34,24 @@ fun surface(t : Forme ) : Double {
     return t.calculerSurface()
 }
 
+fun getMax(list: List<Int>):List<Int>{
+    var nblist : MutableList<Int> = mutableListOf()
+    for (i in list){
+        if(i % 2 == 0)
+        {
+            nblist.add(i)
+        }
+
+    }
+    return nblist
+}
+
 
 fun main(){
     val sp1 = Smatphone(1,"iphone","17",1200.0,23)
     var t = Triangle(2.3,4.2)
     var r = Rectangle(3,3)
     var c = Circl(5)
-    surface(c)
+    val list = mutableListOf<Int>(2,5,9,2,4,9,10,4)
+    println(getMax(list))
 }
