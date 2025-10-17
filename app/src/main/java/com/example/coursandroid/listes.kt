@@ -6,7 +6,7 @@ class Liste() {
     var list : ArrayList<Int> = ArrayList<Int>()
     fun remplirList(){
         for (i in 0..10){
-            this.list.add(i,i*2)
+            this.list.add(i,i)
         }
         for (i in 0..10){
             println(this.list.get(i))
@@ -91,5 +91,14 @@ fun remplirList(){
 fun main(){
     var l = Liste()
     l.remplirList()
-    println(l.getNbrPremier())
+    var list = l.getNbrPair()
+    println(list)
+    var m = l.getMax()
+    println(m)
+
+    var pr = l.getNbrImpair()
+    println(pr)
+    var pre = l.getNbrPremier()
+    println(pre)
+
 }
