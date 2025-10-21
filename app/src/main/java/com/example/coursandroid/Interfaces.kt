@@ -60,6 +60,26 @@ class Calculer(val a:Int,val b :Int){
 
 fun main(){
 
+    var tab : ArrayList<String> = arrayListOf()
+    tab.add("ayoub")
+    tab.add("adam")
+    tab.add("rim")
+    /*println(tab.get(0))
+    tab.remove("ayoub")
+    tab.removeAt(1)
+    println(tab.size)
+    println(tab.get(0))*/
+    for(i in 0..tab.size-1 ){
+        println(tab[i])
+    }
+
+    for(i in 0 until tab.size ){
+        println(tab.get(i))
+    }
+
+    //creer une liste des des entiers est remplir la liste avec 5 entier puis afficher
+    // les pair
+
 
 
 
