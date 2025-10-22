@@ -87,18 +87,42 @@ fun remplirList(){
     }
 
 }
-
+class Salle(val numero : Int, val nbrplace : Int, val nomSalle : String){
+    override fun toString(): String {
+        return "numero = $numero , place = $nbrplace , nom = $nomSalle"
+    }
+}
 fun main(){
     var l = Liste()
-    l.remplirList()
-    var list = l.getNbrPair()
-    println(list)
+    //l.remplirList()
+    var list1 = l.getNbrPair()
+    //println(list)
     var m = l.getMax()
-    println(m)
+   // println(m)
 
     var pr = l.getNbrImpair()
-    println(pr)
+    //println(pr)
     var pre = l.getNbrPremier()
-    println(pre)
+    //println(pre)
+    val list : ArrayList<Salle> = arrayListOf()
+    val salle1 = Salle(1,20,"salle 1")
+    val salle2 = Salle(2,20,"salle 2")
+    list.add(salle1)
+    list.add(salle2)
+    list.remove(salle2)
+    list.removeAt(0)
+    list.size
+    list.addAll(list)
+
+    println(salle1)
+    val map = mapOf("key1" to 1, "key2" to 4)
+    println(map.keys)
+    println(map.values)
+    var map2 : HashMap<String,Int> = hashMapOf()
+    map2.put("tarik",21)
+    map2.put("soukaina",18)
+    map2.put("saad",18)
+    map2.put("saad",23)
+    println(map2.keys)
 
 }

@@ -76,10 +76,36 @@ fun main(){
     for(i in 0 until tab.size ){
         println(tab.get(i))
     }
+    for(elt in tab){
+
+        println(elt)
+    }
 
     //creer une liste des des entiers est remplir la liste avec 5 entier puis afficher
     // les pair
 
+    var list : ArrayList<Int> = arrayListOf()
+    list.add(4)
+    list.add(5)
+    list.add(3)
+    for(elt in list){
+        if(elt % 2 == 0){
+            println(elt)
+        }
+    }
+    // ecrire un programme pour remplir une liste des chaine de caractere et afficher
+    // le dernier élement et le premier
+
+    var list2 : ArrayList<String> = arrayListOf()
+    list2.add("oussama")
+    list2.add("amine")
+    list2.add("karim")
+    list2.add("abderhmane")
+    list2.add("amjad")
+    println(list2.get(0))
+    println(list2[0])
+    println(list2.get(list2.size - 1))
+    // afficher le plus long prénom
 
 
 
