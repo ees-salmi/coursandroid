@@ -1,20 +1,21 @@
 package com.example.coursandroid
 
 import androidx.compose.runtime.internal.illegalDecoyCallException
-
+class Personnes(age:Int,email:String)
 fun main(array: Array<String>){
 
     var groupe202 : HashMap<String,Double> = hashMapOf()
-    groupe202.put("tarik",15.2)
-    groupe202.put("zakaria",17.2)
+
+    groupe202.put("tarik",12.5)
+    groupe202.put("zakaria",17.00)
     groupe202.put("marwa",10.5)
     groupe202.put("ilyass",12.4)
     var somme  = 0.0
-    var compteur = 0
+    var compteur = 1
 
     for(value in groupe202.values){
         somme = somme + value
-        compteur++
+        //compteur++
     }
     // to use exception handling here
 
@@ -29,9 +30,9 @@ fun main(array: Array<String>){
     }
     println(max2)
 
-    var listdlist : HashMap<String, HashMap<String,Double>> = hashMapOf()
-        listdlist.put("groupe2",groupe202)
+    var listdlist : HashMap<String, Double> = hashMapOf()
+        listdlist.put("groupe2",2.2)
     var groupe201 : HashMap<String,Double> = hashMapOf()
-        listdlist.put("groupe1",groupe201)
+        listdlist.put("groupe1",2.2)
 
 }
