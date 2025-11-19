@@ -1,5 +1,10 @@
 package com.example.coursandroid
 
+/**
+ * créer une classe pour la liste des attraction
+ * access direct sans creation d objet
+ * val attr = Attraction.MEDINA
+ */
 enum class Attraction{
    MEDINA,
    KESBAH,

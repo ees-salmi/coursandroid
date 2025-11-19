@@ -1,5 +1,5 @@
 package com.example.coursandroid
-
+import kotlinx.coroutines.*
 
 data class Roue(val nbr : Int)
 data class Cars(val model : String, val name : String){
@@ -23,19 +23,21 @@ fun rectangle(larg : Double, long : Double):Double{
     return larg * long
 }
 
-fun main(){
-    // oussama youssef
-   val resltats =  rectangle(20.3,30.3)
-    //println(resltats)
-    val str1 : String = "ali"
-    val str2 : String = "ilaa"
+fun main() = runBlocking {
+        val resultat: Deferred<Int> = async {
+            delay(1000)
+            10 + 20
+        }
 
+        println("En attente du résultat...")
+        val valeur = resultat.await()
+        println("Résultat = $valeur")
 
-    /*val str : String  by lazy  {
-        "test"
-    }*/
-    //val resultat = palindrome(str1,str2)
-    //println(str)
-   // println(rectangle(20.5,30.5))
+    launch {
+        println("Tâche 1 : je commence…")
+        delay(1000)
+        println("Tâche 1 : j'ai terminé !")
+    }
 
+    println("Je continue mon programme pendant que la tâche 1 travaille…")
 }
