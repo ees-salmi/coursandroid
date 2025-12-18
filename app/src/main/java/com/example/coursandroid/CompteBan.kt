@@ -22,8 +22,8 @@ class CompteBan(var solde : Double, var num : String) {
     }
 }
 
-class Banque(val loc : String, var comptes : ArrayList<CompteBan>){
-    fun ajouterCompte(compte : CompteBan){
+class Banques(val loc : String, var comptes : ArrayList<CompteBan>){
+    fun ajouterComptes(compte : CompteBan){
         comptes.add(compte)
     }
 
@@ -42,10 +42,10 @@ fun main(){
     c.afficher()
 
     var liste = arrayListOf<CompteBan>()
-    var banque1 = Banque("deroua",liste)
+    var banque1 = Banques("deroua",liste)
     var rime = CompteBan(5000.0,"MAR1234")
-    banque1.ajouterCompte(rime)
-    banque1.ajouterCompte(c)
+    banque1.ajouterComptes(rime)
+    banque1.ajouterComptes(c)
     for(compte in liste){
         println(compte)
     }
