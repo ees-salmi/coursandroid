@@ -67,7 +67,7 @@ class GestionBanque : InterfaceBanque {
     override
     fun getCapital(): Double {
         var capital = 0.0
-        capital = listComptes.sumOf { it.solde }
+        //capital = listComptes.sumOf { it.solde }
         for (c in listComptes){
             capital = capital + c.solde
         }
@@ -102,7 +102,27 @@ class GestionBanque : InterfaceBanque {
 
 
 
-fun main(){
-    val s = soustraction(5.0,3.0)
-    print(s)
+fun main() {
+    val compte1 = Compte("abc1", 1000.0, "tarik", TypeCompte.PERSONNE)
+    val compte2 = Compte("abc2", 40000.0, "agro bio", TypeCompte.COOPERATIVE)
+    val compte3 = Compte("abc3", 40000.0, "cmc nouaceur", TypeCompte.ENTREPRISE)
+    val compte4 = Compte("abc4", 1000.0, "oussama", TypeCompte.PERSONNE)
+    val banque = GestionBanque()
+    println(banque.listComptes.size)
+    banque.ajouterCompte(compte1)
+    banque.ajouterCompte(compte2)
+    banque.ajouterCompte(compte3)
+    banque.ajouterCompte(compte4)
+    println(banque.listComptes.size)
+    val resultat = banque.rechercherCompte(1000.0, TypeCompte.PERSONNE)
+    println("la taillde du resultats est " + resultat.size)
+
+    val capital = banque.getCapital()
+    println("la capitale calculé est $capital")
+    println("le solde de tarike est" + compte1.solde)
+    println("le solde de oussama est" + compte4.solde)
+    banque.transferer(compte1, compte4, 1000.0)
+    println("le solde de tarik apres est" + compte1.solde)
+    println("le solde de oussama apres est" + compte4.solde)
+
 }
