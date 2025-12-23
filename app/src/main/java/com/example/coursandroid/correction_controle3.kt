@@ -49,38 +49,48 @@ class GestionBanque : InterfaceBanque {
         type: TypeCompte
     ): List<Compte> {
         val listResults : ArrayList<Compte> = arrayListOf()
-        for (c in listComptes){
-            if(c.solde == solde && c.typeCompte == type){
-                listResults.add(c)
-                }
+        val r = listComptes.filter { it.solde == solde && it.typeCompte == type }
+        for (cpt in listComptes){
+            if(cpt.solde == solde && cpt.typeCompte.equals(type)){
+                listResults.add(cpt)
             }
-        return listResults
+        }
+        return r
     }
 
     override
     fun supprimerCompte(compte: Compte): Boolean {
-        val r = listComptes.remove(compte)
-        return r
+        return listComptes.remove(compte)
+
     }
 
     override
     fun getCapital(): Double {
         var capital = 0.0
+        capital = listComptes.sumOf { it.solde }
         for (c in listComptes){
             capital = capital + c.solde
         }
         return capital
     }
-
+    fun rechercher(c: Compte):Boolean{
+        var existe = false
+        for( elm in listComptes){
+            if(c.equals(elm)){
+                existe = true
+            }
+        }
+        return existe
+    }
     override
     fun transferer(
-        c1: Compte,
-        c2: Compte,
+        from: Compte,
+        to: Compte,
         montant: Double
     ) {
-        if(listComptes.contains(c1) && listComptes.contains(c2)){
-            c1.solde = c1.solde - montant
-            c2.solde = c2.solde + montant
+        if(listComptes.contains(from) && listComptes.contains(to)){
+            from.solde = from.solde - montant
+            to.solde = to.solde + montant
         }
     }
 
